@@ -1,7 +1,6 @@
 FROM alpine:latest
-MAINTAINER Alexey Baikov <sysboss[@]mail.ru>
 
-ENV CONFD_VERSION="0.11.0" \
+ENV CONFD_VERSION="0.16.0" \
     CONFD_URL="https://github.com/kelseyhightower/confd/releases/download"
 
 RUN apk --no-cache --update add ca-certificates openssl \
@@ -14,6 +13,7 @@ RUN apk add --no-cache nginx \
  && rm -rf /var/cache/apk/*
 
 ADD config /etc/confd
+COPY config/confd.toml /etc/confd/confd.toml
 COPY run.sh /run.sh
 
 CMD ["sh", "/run.sh"]

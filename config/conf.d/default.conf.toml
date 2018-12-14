@@ -1,3 +1,8 @@
 [template]
+prefix = "/nginx"
 src = "default.conf.tmpl"
 dest = "/etc/nginx/conf.d/default.conf"
+keys = [
+   "/www/server_name",
+]
+reload_cmd ="/usr/sbin/nginx -s reload"

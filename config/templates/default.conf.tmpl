@@ -2,6 +2,6 @@ server {
     server_name {{ getenv "SERVER_NAME" }};
 
     location / {
-      root /var/www/localhost/htdocs;
+        proxy_pass http://www.{{getv "/www/server_name"}};
     }
 }

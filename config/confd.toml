@@ -1,0 +1,10 @@
+# More configs could be found at https://github.com/kelseyhightower/confd/blob/master/docs/configuration-guide.md
+backend = "etcdv3"
+confdir = "/etc/confd"
+log-level = "debug"
+nodes = [
+  "http://35.229.162.77:2379",
+  "http://35.229.232.238:2379",
+  "http://35.221.194.187:2379",
+]
+watch = true
