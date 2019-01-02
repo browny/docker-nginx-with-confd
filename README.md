@@ -11,10 +11,9 @@ to set run-time configuration for containers.
 // build image
 docker build -t nginx-confd .
 
-// run nginx with confd listening to etcd
+// run nginx with confd listening to etcd, confd config is at `config/confd.toml`
 docker run -it -p 3000:80 \
   --env SERVER_NAME=sample.com \
-  --env ETCD_NODES=http://35.229.162.77:2379,http://35.229.232.238:2379,http://35.221.194.187:2379 \
   --name nginx-confd \
   nginx-confd
 
