@@ -6,13 +6,8 @@ if [[ -z "$SERVER_NAME" ]]; then
   exit 1;
 fi
 
-if [[ -z "$ETCD_NODES" ]]; then
-  echo ETCD_NODES variable missing;
-  exit 1;
-fi
-
 # generate configs
-/bin/confd -watch -backend etcd -node=$ETCD_NODES -log-level=debug &
+/bin/confd -config-file="/etc/confd/confd.toml" &
 
 # start nginx foreground
 echo "start nginx ..."

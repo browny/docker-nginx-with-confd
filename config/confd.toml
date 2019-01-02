@@ -3,8 +3,8 @@ backend = "etcdv3"
 confdir = "/etc/confd"
 log-level = "debug"
 nodes = [
-  "http://35.229.162.77:2379",
-  "http://35.229.232.238:2379",
-  "http://35.221.194.187:2379",
+  "http://10.140.0.3:2379",
+  "http://10.140.0.4:2379",
+  "http://10.140.0.7:2379",
 ]
 watch = true
