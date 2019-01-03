@@ -25,3 +25,11 @@ ETCDCTL_API=3 etcdctl --endpoints="http://35.229.162.77:2379,http://35.229.232.2
 // refresh http://localhost:3000/, the google.com should be shown
 ```
 
+# Push image to gcr.io
+
+```
+gcloud auth configure-docker
+docker build -t nginx-confd .
+docker tag nginx-confd [HOSTNAME]/[PROJECT-ID]/[IMAGE]
+docker push [HOSTNAME]/[PROJECT-ID]/[IMAGE]
+```
