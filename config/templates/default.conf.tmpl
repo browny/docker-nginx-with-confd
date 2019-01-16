@@ -4,4 +4,9 @@ server {
     location / {
         proxy_pass http://www.{{getv "/www/server_name"}};
     }
+
+	# sha1 hash of `nginx-health`
+	location /5A75041DCEC71EAF6DF1B0A9BA494E1624798AD7 {
+        return 200 "healthy\n";
+    }
 }
